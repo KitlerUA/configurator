@@ -181,6 +181,8 @@ func (c *Config) parseStructConfigValues(structRef reflect.Value, val interface{
 	c.bindConfigFileValues(configValues)
 	c.populateDefaults(defaultValues)
 
+	pflag.Parse()
+
 	err := c.populateConfigStruct(structRef)
 
 	return err
